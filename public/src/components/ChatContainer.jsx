@@ -5,7 +5,7 @@ import axios from "axios";
 
 //importing the ChatInput, Logout component..adding those features in ChatContainer..
 import ChatInput from "./ChatInput";
-import Logout from "./Logout";
+
 
 // The uuid library, particularly the v4 function, is commonly used in React (and in JavaScript development in general) for generating unique identifiers, 
 // especially UUIDs (Universally Unique Identifiers). H
@@ -121,8 +121,6 @@ export default function ChatContainer({ currentChat, socket }) {
             <h3>{currentChat.username}</h3>
           </div>
         </div>
-        {/* adding the logout feature */}
-        <Logout />
       </div>
       <div className="chat-messages">
         {messages.map((message) => {

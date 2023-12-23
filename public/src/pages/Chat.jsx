@@ -8,6 +8,8 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+// import Logout from "./Logout";
+import Logout from "../components/Logout";
 
 // 1) socket.io-client is a JavaScript library that provides client-side functionality for interacting with a server that uses the Socket.IO library. 
 // Socket.IO enables real-time, bidirectional, and event-based communication.
@@ -80,12 +82,20 @@ export default function Chat() {
     setCurrentChat(chat);
   };
 
+  const handleChangeAvatar = () => 
+  {
+      navigate("/setAvatar");
+  }
   return (
     <>
     {/* here we are defining that at each time when the user selects the chat we add handleChatChange function... */}
     {/* if there is no currentchat then we show welcome page.. */}
       <Container>
-
+        <div className="edit-profile">
+            <button onClick={handleChangeAvatar}>Edit Avatar Image</button>
+            {/* <button>Change Password</button> */}
+            <Logout />
+        </div>
         <div className="container">
           {/* giving parameter as contacts along with handlechatchange... */}
           <Contacts contacts={contacts} changeChat={handleChatChange} />
@@ -123,4 +133,20 @@ const Container = styled.div`
       grid-template-columns: 35% 65%;
     }
   }
+  .edit-profile{
+    width:85vw;
+    height:5vh;
+    display: flex;
+    justify-content:space-between;
+  }
+  button {
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #9a86f3;
+  }
 `;
+

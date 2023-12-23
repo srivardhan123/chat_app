@@ -24,4 +24,5 @@ router.post("/setavatar/:id", setAvatar);
 router.get("/logout/:id", logOut);
 router.post("/resetpassword",resetpassword);
 router.post("/forgotpassword",forgotpassword);
+
 module.exports = router;

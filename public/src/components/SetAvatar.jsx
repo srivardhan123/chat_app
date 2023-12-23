@@ -67,7 +67,7 @@ export default function SetAvatar() {
         image: avatars[selectedAvatar],
       });
 
-      //if we get response as true..then we are updatign the current user parameters to true..
+      //if we get response as true..then we are updating the current user parameters to true..
       if (data.isSet) {
         user.isAvatarImageSet = true;
         user.avatarImage = data.image;
