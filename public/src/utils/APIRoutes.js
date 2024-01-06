@@ -26,3 +26,5 @@ export const resetpasswordRoute = `${host}/api/auth/resetpassword`;
 
 
 export const forgotpasswordRoute = `${host}/api/auth/forgotpassword`;
+
+export const updateusername = `${host}/api/auth/updateusername`;

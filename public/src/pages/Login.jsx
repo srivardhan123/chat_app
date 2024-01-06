@@ -20,8 +20,10 @@ export default function Login() {
   };
   
   useEffect(() => {
-    console.log(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY));
-    //console.log('hello');
+    console.log(JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)));
+    // await JSON.parse(
+    //   localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+    // ).username
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
       navigate("/");
     }
@@ -60,7 +62,6 @@ export default function Login() {
           process.env.REACT_APP_LOCALHOST_KEY,
           JSON.stringify(data.user)
         );
-
         navigate("/");
       }
     }

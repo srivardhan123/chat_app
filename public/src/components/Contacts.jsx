@@ -2,8 +2,21 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
+// import '@blueprintjs/core/lib/css/blueprint.css'; 
+// import '@blueprintjs/icons/lib/css/blueprint-icons.css'
+// import { EditableText } from '@blueprintjs/core'; 
+// import { updateusername } from "../utils/APIRoutes";
+// import { ToastContainer, toast } from "react-toastify";
+// import axios from "axios";
 
 export default function Contacts({ contacts, changeChat }) {
+  // const toastOptions = {
+  //   position: "bottom-right",
+  //   autoClose: 8000,
+  //   pauseOnHover: true,
+  //   draggable: true,
+  //   theme: "dark",
+  // };
   //here storing info about current user only..because while extracting contatcs 
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
@@ -19,6 +32,26 @@ export default function Contacts({ contacts, changeChat }) {
     setCurrentUserName(data.username);
     setCurrentUserImage(data.avatarImage);
   }, []);
+
+  // useEffect(async () => {
+  //   const local_storage_data = await JSON.parse(
+  //     localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+  //   );
+  //   const _id = local_storage_data._id;
+  //   const {data} = await axios.post(updateusername, {
+  //     _id,currentUserName
+  //   });
+  //   if (data.status === false) {
+  //     toast.error(data.msg, toastOptions);
+  //   }
+  //   if (data.status === true) {
+  //     localStorage.setItem(
+  //       process.env.REACT_APP_LOCALHOST_KEY,
+  //       JSON.stringify(data.user)
+  //     );
+  //   }
+  //   console.log("hey! it worked...");
+  // },[currentUserName]);
 
   //when ever we select any contact...this is handler..
   const changeCurrentChat = (index, contact) => {
@@ -69,7 +102,15 @@ export default function Contacts({ contacts, changeChat }) {
               />
             </div>
             <div className="username">
-              <h2>{currentUserName}</h2>
+            <h2>
+              {/* <EditableText
+                multiline={false} 
+                minLines={1} 
+                intent="success"
+                placeholder={currentUserName}
+                /> */}
+                {currentUserName}
+            </h2>
             </div>
           </div>
         </Container>

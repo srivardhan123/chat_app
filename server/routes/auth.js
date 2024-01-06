@@ -5,7 +5,8 @@ const {
   setAvatar,
   logOut,
   resetpassword,
-  forgotpassword
+  forgotpassword,
+  updateUsername
 } = require("../controllers/userController");
 
 // both of these options achieve the same result, but they serve slightly different purposes.
@@ -24,5 +25,6 @@ router.post("/setavatar/:id", setAvatar);
 router.get("/logout/:id", logOut);
 router.post("/resetpassword",resetpassword);
 router.post("/forgotpassword",forgotpassword);
+router.post("/updateusername",updateUsername);
 
 module.exports = router;

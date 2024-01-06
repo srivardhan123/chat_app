@@ -162,19 +162,21 @@ module.exports.forgotpassword = async (req,res,next) => {
   }
 };
 
-// module.exports.updateUsername = async (req,res) => 
-// {
-//   try
-//   {
-//     if(!req.body)
-//     {
-//       return res.status(400).send({message:"Data and Body can not be Empty..."});
-//     }
-//     const {_id} = req.body;
-//     await User.findByIdAndUpdate({_id},req.body,{useFindAndModify:false});
-//     return res.status(200).send({message:"Updated Username Succesfully..."});
-//   }catch(ex)
-//   {
-//     next(ex);
-//   }
-// }
+module.exports.updateUsername = async (req,res) => 
+{
+  try
+  {
+    if(!req.body)
+    {
+      return res.status(400).send({message:"Data and Body can not be Empty..."});
+    }
+    const {_id} = req.body;
+    await User.findByIdAndUpdate({_id},req.body,{useFindAndModify:false});
+    const user =  await User.findById({_id});
+    return res.json({status:true,user});
+  }catch(ex)
+  {
+    console.log(ex);
+    return res.status(400).send({message:ex});
+  }
+};
