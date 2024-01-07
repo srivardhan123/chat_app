@@ -8,7 +8,6 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-// import Logout from "./Logout";
 import Logout from "../components/Logout";
 
 // 1) socket.io-client is a JavaScript library that provides client-side functionality for interacting with a server that uses the Socket.IO library. 
@@ -101,7 +100,7 @@ export default function Chat() {
           <Contacts contacts={contacts} changeChat={handleChatChange} />
           {/* //if no chat selected then we need to show welcome page... */}
           {currentChat === undefined ? (
-            <Welcome />
+            <Welcome/>
           ) : (
             // if the currentChat selected...then we need to open that chatBox
             <ChatContainer currentChat={currentChat} socket={socket} />
