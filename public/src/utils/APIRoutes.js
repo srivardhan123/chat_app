@@ -1,5 +1,6 @@
 //location where our server is running right now!
-export const host = "http://localhost:5001";
+// export const host = "http://localhost:5001";
+export const host = "https://srivardhans-chatapp.onrender.com";
 
 //api call route from frontend to backend for the register page!
 export const loginRoute = `${host}/api/auth/login`;
