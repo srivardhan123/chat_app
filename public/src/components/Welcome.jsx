@@ -5,7 +5,6 @@ import Robot from "../assets/robot.gif";
 
 export default function Welcome({username}) {
   return (
-
     <Container>
       <img src={Robot} alt="" />
       <h1>

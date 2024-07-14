@@ -22,11 +22,11 @@ export default function Login() {
   useEffect(() => {
     console.log(JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)));
     // await JSON.parse(
-    //   localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
-    // ).username
+    //rname
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
       navigate("/");
-    }
+    }   localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+    // ).use
   }, []);
 
   //updating the values of the input...

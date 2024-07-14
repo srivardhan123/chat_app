@@ -52,7 +52,7 @@ export default function Contacts({ contacts, changeChat }) {
       toast.error(data.msg, toastOptions);
     }
     if (data.status === true) {
-      console.log("hey, just checking whether it worked or not...");
+      // console.log("hey, just checking whether it worked or not...");
       localStorage.setItem(
         process.env.REACT_APP_LOCALHOST_KEY,
         JSON.stringify(data.user)
